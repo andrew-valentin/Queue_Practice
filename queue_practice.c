@@ -73,18 +73,20 @@ typedef struct QueueArrayList
 void printQueueLL(QueueLL *q)
 {	
 	int i;
-	Node *temp = q->head;
+	Node *temp = q->tail->next;
 	
 	printf("Capacity: %d\n\n", q->capacity);
 	
-	while (temp != NULL)
+	while (temp != q->tail)
 	{
-		printf("%s%d", temp->value, (temp == q->head) ? "" : " <- ");
+		printf("%d%s", temp->value, " <- ");
 		temp = temp->next;
 	}
 	
+	printf("%d%c", temp->value, (q->size == q->capacity) ? '\n' : ' ');
+	
 	for (i = 0; i < q->capacity - q->size; i++)
-		printf(" <- *empty*\n");
+		printf("<- *empty*%c", (i == q->capacity - q->size - 1) ? '\n' : ' ';
 }
 
 void printQueueArr(QueueArr *q)

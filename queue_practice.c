@@ -57,7 +57,7 @@ typedef struct Node
 
 typedef struct QueueLinkedList
 {
-	Node *head;
+	Node *tail;
 	int size; // Number of elements currently in the queue
 	int capacity; // Max number of elements the queue can hold
 } QueueLL;

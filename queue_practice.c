@@ -130,11 +130,13 @@ void printQueueArr(QueueArr *q)
 	printf("\n");
 }
 
+// Takes in an integer value and returns the address of a node that holds that value
 ??? createNode(???)
 {
 	// your code goes here
 }
 
+// Returns the address of an initialized queue
 ??? createQueue(???)
 {
 	// your code goes here

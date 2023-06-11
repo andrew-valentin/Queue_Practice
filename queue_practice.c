@@ -73,8 +73,22 @@ typedef struct QueueArrayList
 void printQueueLL(QueueLL *q)
 {	
 	int i;
-	Node *temp = q->tail->next;
+	Node *temp;
+
+	if (q == NULL)
+	{
+		printf("\nQueue does not exist!\n");
+		return;
+	}
+	if (q->size == 0)
+	{
+		printf("\nQueue is empty!\n");
+		return;
+	}
 	
+	temp = q->tail->next;
+	
+	printf("\nSize: %d\n", q->size);
 	printf("Capacity: %d\n\n", q->capacity);
 	
 	while (temp != q->tail)
@@ -86,13 +100,25 @@ void printQueueLL(QueueLL *q)
 	printf("%d%c", temp->value, (q->size == q->capacity) ? '\n' : ' ');
 	
 	for (i = 0; i < q->capacity - q->size; i++)
-		printf("<- *empty*%c", (i == q->capacity - q->size - 1) ? '\n' : ' ';
+		printf("<- *empty*%c", (i == q->capacity - q->size - 1) ? '\n' : ' ');
 }
 
 void printQueueArr(QueueArr *q)
 {
 	int i;
-	
+
+	if (q == NULL)
+	{
+		printf("\nQueue does not exist!\n");
+		return;
+	}
+	if (q->size == 0)
+	{
+		printf("\nQueue is empty!\n");
+		return;
+	}
+
+	printf("\nSize: %d\n", q->size);
 	printf("Capacity: %d\n\n", q->capacity);
 
 	for (i = q->front; i < (q->front + q->size); i++)
@@ -100,16 +126,16 @@ void printQueueArr(QueueArr *q)
 	
 	for (i = 0; i < q->capacity - q->size; i++)
 		printf(" <- *empty*");
+	
+	printf("\n");
 }
 
-// Adds an element to the end of the queue
-??? enqueue(???)
+??? createNode(???)
 {
 	// your code goes here
 }
 
-// Removes an element from the front of the queue and returns the element
-??? dequeue(???)
+??? createQueue(???)
 {
 	// your code goes here
 }
@@ -131,6 +157,20 @@ void printQueueArr(QueueArr *q)
 {
 	// your code goes here
 }
+
+// Adds an element to the end of the queue
+??? enqueue(???)
+{
+	// your code goes here
+}
+
+// Removes an element from the front of the queue and returns the element
+??? dequeue(???)
+{
+	// your code goes here
+}
+
+
 
 int main()
 {
